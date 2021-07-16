@@ -75,7 +75,6 @@ exports.readAll = (req, res) => {
 //Find one Product
 exports.FindOne = async (req, res) => {
   const ProductID = req.params.id
-  console.log(ProductID)
   const existProducts = getProductData()
   const findExist = await existProducts.find(
     product => product.id === parseInt(ProductID)

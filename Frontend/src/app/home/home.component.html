@@ -1,0 +1,59 @@
+<div class="container">
+  <div
+    class="
+      d-flex
+      justify-content-between
+      flex-wrap flex-md-nowrap
+      align-items-center
+      pt-3
+      pb-2
+      mb-3
+      border-bottom
+    "
+  >
+    <h2 class="h2">Books List</h2>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Title</th>
+          <th scope="col">Price</th>
+          <th scope="col">Category</th>
+          <th scope="col">Image</th>
+          <th class="text-center" scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="align-middle"
+          *ngFor="let product of Products; let i = index"
+        >
+          <th scope="row">{{ product.id }}</th>
+          <td class="w-25">{{ product.title }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.category }}</td>
+          <td class="w-25">
+            <img class="img-thumbnail" [src]="product.image" />
+          </td>
+          <td class="text-center">
+            <button
+              class="btn btn-sm btn-primary"
+              routerLink="/details/{{ product.id }}"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-sm btn-danger"
+              (click)="delete(product.id, i)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
