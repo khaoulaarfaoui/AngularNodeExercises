@@ -13,7 +13,6 @@ import {
 export class ProductCrudService {
   // Node/Express API
   REST_API: string = 'http://localhost:8080/api/products';
-  // Http Header
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private httpClient: HttpClient) {}
@@ -49,7 +48,6 @@ export class ProductCrudService {
       .pipe(catchError(this.handleError));
   }
 
-  // Error
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

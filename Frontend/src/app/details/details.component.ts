@@ -14,7 +14,6 @@ export class DetailsComponent implements OnInit {
   constructor(
     public formBuilder: FormBuilder,
     private router: Router,
-    private ngZone: NgZone,
     private activatedRoute: ActivatedRoute,
     private productService: ProductCrudService
   ) {
@@ -44,7 +43,6 @@ export class DetailsComponent implements OnInit {
     this.productService.updateBook(this.getId, this.updateForm.value).subscribe(
       () => {
         console.log('Data updated successfully!');
-        this.ngZone.run(() => this.router.navigateByUrl('/home'));
       },
       (err) => {
         console.log(err);

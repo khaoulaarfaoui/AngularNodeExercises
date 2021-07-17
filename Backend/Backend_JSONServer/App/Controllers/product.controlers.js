@@ -10,7 +10,7 @@ const getProductData = () => {
   const jsonData = fs.readFileSync(source)
   return JSON.parse(jsonData)
 }
-//read the user data from json file
+//read the product data from json file
 const saveProductData = data => {
   const stringifyData = JSON.stringify(data)
   fs.writeFileSync(source, stringifyData)
