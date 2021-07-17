@@ -1,0 +1,35 @@
+<div class="container mx-auto row">
+  <form [formGroup]="productForm">
+    <div class="form-group">
+      <label>Id</label>
+      <input formControlName="idProduct" />
+    </div>
+
+    <div class="form-group">
+      <label>title</label>
+      <input formControlName="title" />
+    </div>
+
+    <div class="form-group">
+      <label>Category</label>
+      <input formControlName="category" />
+    </div>
+
+    <div class="form-group">
+      <label>description</label>
+      <input formControlName="price" />
+    </div>
+
+    <div class="form-group">
+      <label>description</label>
+      <input formControlName="description" />
+    </div>
+    <button
+      class="mx-auto btn btn-success"
+      type="submit"
+      (click)="updateProduct(product.id)"
+    >
+      Update
+    </button>
+  </form>
+</div>

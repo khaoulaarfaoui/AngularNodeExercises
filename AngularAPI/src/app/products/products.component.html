@@ -1,0 +1,33 @@
+<div class="container mx-auto mt-4">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td scope="row">{{ product.id }}</td>
+        <td>{{ product.title }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.description }}</td>
+        <td class="w-25">
+          <img class="img-thumbnail" [src]="product.image" />
+        </td>
+        <td class="container">
+          <button class="btn-success" routerLink="detail/{{ product.id }}">
+            Update
+          </button>
+          <button class="btn-warning" (click)="deleteProduct(product.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
